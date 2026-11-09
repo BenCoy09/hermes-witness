@@ -1,8 +1,14 @@
 name: hermes-witness
 version: 1.0.0
-description: Evidence-gated learning. Grades every skill the agent writes against the receipts in its own tool trail (unresolved failures, unrun verification, dropped user constraints), tracks real-world outcomes, and quarantines skills that were never earned.
-author: Hermes Witness contributors
+description: >-
+  Evidence-gated learning. Grades each agent-written skill against
+  its own tool trail and quarantines skills that were never earned.
+  Disclosure: reads MEMORY.md, USER.md and skills under ~/.hermes;
+  moves D-graded skills to ~/.hermes/witness/quarantine (reversible);
+  writes a local ledger there; makes no network calls.
+author: BenCoy09
 license: MIT
+requires_hermes: ">=0.23.0"
 provides_hooks:
   - post_tool_call
   - pre_llm_call
